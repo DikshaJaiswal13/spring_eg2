@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- handler mapping prog -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--  schema are the rules for defining xml tags present in spring-beans.xsd-->
+<bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"><!-- we get the response from view resolver -->
+        <property name="prefix">
+            <value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    
+     <bean name="/userRegistration.htm" class="com.pack.Controller.UserController" p:formView="userForm" p:successView="userSuccess" p:userService-ref="userservice"> <!-- id of userService class --> <!-- /userRegistration.htm is the url pattern AND IF IT MATCHES with bean name then the UserController prog will be invoked-->
+      <!--     here p is a namespace which represents property(for shorthand representation) name is for handler mapping ,otherwise use id-->
+    </bean> 
+    
+    <bean id="userservice" class="com.pack.service.UserServiceImpl"></bean>
+ 
+</beans>

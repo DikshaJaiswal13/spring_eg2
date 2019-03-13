@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+ 
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd"><!-- spring-context.xsd:thru this we can support annotations in our prog -->
+ 	<context:annotation-config/> <!-- this line is to be used whenever we use annotations -->
+ 	<bean id="student" class="com.pack.Student">
+ 	<property name="age" value="22"></property>
+ 	<property name="name" value="diksha"></property>
+ 	</bean>
+ 	
+ 	<bean id="student1" class="com.pack.Student">
+ 	<property name="age" value="20"></property>
+ 	<property name="name" value="dikshajaiswal"></property>
+ 	</bean>
+ 	<context:annotation-config></context:annotation-config>
+ 	<bean id="profile" class="com.pack.Profile">
+ 	
+ 	</bean>
+</beans>
